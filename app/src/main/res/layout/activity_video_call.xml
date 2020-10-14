@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#010627"
+    tools:context=".VideoCallActivity">
+
+    <ImageView
+        android:layout_width="188dp"
+        android:layout_height="177dp"
+        android:src="@drawable/logo"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="16dp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Fleega Clinic Video Calling"
+        android:textSize="35dp"
+        android:layout_marginRight="20sp"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:layout_marginLeft="20sp"
+        android:layout_marginTop="150dp"
+        android:textColor="#FFF"/>
+
+
+    <EditText
+        android:id="@+id/conferenceName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Start a new meeting"
+        android:textColorHint="#FFF"
+        android:textColor="#FFF"
+        android:textSize="25sp"
+        android:layout_marginLeft="10sp"
+        android:layout_marginRight="10sp"
+        android:layout_marginTop="90dp"
+        android:contentDescription="Enter conference name..."
+        android:ems="10"
+        android:inputType="textPersonName"
+        />
+
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:layout_gravity="center"
+        android:onClick="onButtonClick"
+        android:text="Join"
+        />
+
+</LinearLayout>
