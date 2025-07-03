@@ -6,7 +6,7 @@ android {
     buildToolsVersion "35.0.0" // Optional; can be omitted as build tools are now bundled with AGP
 
     defaultConfig {
-        applicationId "com.fleega.fleegaclinic"
+        applicationId "com.example.fleegaclinic"
         minSdkVersion 23
         targetSdkVersion 35
         versionCode 1
