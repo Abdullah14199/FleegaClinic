@@ -1,8 +1,6 @@
 package com.example.fleegaclinic;
-
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.net.Uri;
@@ -15,6 +13,7 @@ import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.Toast;
+import com.example.fleegaclinic.R;
 
 public class MainActivity extends AppCompatActivity {
     public WebView WV;
@@ -34,10 +33,10 @@ public class MainActivity extends AppCompatActivity {
             WebSettings webSettings = WV.getSettings();
             webSettings.setJavaScriptEnabled(true);
             webSettings.setLoadWithOverviewMode(true);
-            WV.getSettings().setAppCacheMaxSize(5 * 1024 * 1024); // 5MB
-            WV.getSettings().setAppCachePath(getApplicationContext().getCacheDir().getAbsolutePath());
-            WV.getSettings().setAllowFileAccess(true);
-            WV.getSettings().setAppCacheEnabled(true);
+            webSettings.setAllowFileAccess(true);
+            webSettings.setCacheMode(WebSettings.LOAD_DEFAULT); // Modern cache
+            webSettings.setDomStorageEnabled(true); // HTML5 storage
+
             WV.setWebViewClient(new HelloWebViewClient());
             WV.loadUrl(link);
         } catch (Exception ex) {
@@ -83,14 +82,15 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        switch (item.getItemId())
-        {
-            case R.id.video:
-                Intent a = new Intent(MainActivity.this,VideoCallActivity.class);
-                startActivity(a);
-                return true;
-            default:
-                return super.onOptionsItemSelected(item);
+        int id = item.getItemId();
+
+        if (id == R.id.video) {
+            Intent a = new Intent(MainActivity.this, VideoCallActivity.class);
+            startActivity(a);
+            return true;
+        } else {
+            return super.onOptionsItemSelected(item);
         }
     }
+
 }

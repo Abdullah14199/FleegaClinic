@@ -1,13 +1,14 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 30
-    buildToolsVersion "30.0.2"
+    namespace 'com.example.fleegaclinic' // ✅ ADD THIS LINE
+    compileSdkVersion 35
+    buildToolsVersion "35.0.0" // Optional; can be omitted as build tools are now bundled with AGP
 
     defaultConfig {
-        applicationId "com.example.fleegaclinic"
+        applicationId "com.fleega.fleegaclinic"
         minSdkVersion 23
-        targetSdkVersion 30
+        targetSdkVersion 35
         versionCode 1
         versionName "1.0"
 
@@ -36,5 +37,4 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
 
     implementation ('org.jitsi.react:jitsi-meet-sdk:2.10.0') { transitive = true }
-
 }
